@@ -25,7 +25,7 @@
 #     return []
 
 
-# two pointer option: 0(n log n) time | 0(1) space
+# two pointer option: 0(nlog(n)) time | 0(1) space
 def twoNumberSum(array, targetSum):
     array.sort()
     left = 0
