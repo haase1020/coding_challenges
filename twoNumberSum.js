@@ -27,19 +27,19 @@
 // }
 
 // two pointer option: 0(nlog(n)) time | 0(1) space
-function twoNumberSum(array, targetSum) {
-  array.sort((a, b) => a - b);
-  let left = 0;
-  let right = array.length - 1;
-  while (left < right) {
-    const currentSum = array[left] + array[right];
-    if (currentSum === targetSum) {
-      return [array[left], array[right]];
-    } else if (currentSum > targetSum) {
-      right--;
-    }
-  }
-  return [];
-}
+// function twoNumberSum(array, targetSum) {
+//   array.sort((a, b) => a - b);
+//   let left = 0;
+//   let right = array.length - 1;
+//   while (left < right) {
+//     const currentSum = array[left] + array[right];
+//     if (currentSum === targetSum) {
+//       return [array[left], array[right]];
+//     } else if (currentSum > targetSum) {
+//       right--;
+//     }
+//   }
+//   return [];
+// }
 
 console.log(twoNumberSum([1, 2, 3, 4, 5], 9));
