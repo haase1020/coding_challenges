@@ -16,3 +16,6 @@ def productSum(array, multiplier=1):
         else:
             sum += element
     return sum * multiplier
+
+
+print(productSum([1, 2, [3], 4, 5]))
