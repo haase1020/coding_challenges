@@ -1,5 +1,4 @@
-# coding challenge problem for unit assessment
-# from CodeSignal
+# Problem from CodeSignal Challenge
 # prompt: in a city-state of n people, there is a rumor going
 # around that one of the n people is a spy for the neighboring
 # city state. The spy, if it exits:

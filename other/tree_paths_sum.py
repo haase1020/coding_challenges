@@ -1,4 +1,4 @@
-# CodeSignal code challenge for unit assessment
+# Problem from CodeSignal Challenge
 # prompt: given the root of a binary tree where each node contains
 # an integer, determine the sum of all the integer values
 # in the tree.
