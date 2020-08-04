@@ -16,6 +16,8 @@
 # spy: outdgree of 0 and indegree of n-1 (everyone trusts them except the spy)
 # return: identifier if spy found, else -1
 
+
+# time and space complexity is 0(n)
 def uncover_spy(n, trust):
     if len(trust) < n-1:
         return -1
