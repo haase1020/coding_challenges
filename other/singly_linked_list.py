@@ -1,94 +1,89 @@
-from random import randint
+# # this was in question in challenge
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.value = x
+#         self.next = None
+
+# # the linked list class was not listed in the challenge prompt
 
 
-class LinkedListNode:
+# class LinkedList:
+#     # initialize head
+#     def __init__(self):
+#         self.head = None
+#     # function to insert a new node at the beginning
 
-    def __init__(self, value, nextNode=None, prevNode=None):
-        self.value = value
-        self.next = nextNode
-        self.prev = prevNode
+#     def push(self, new_data):
+#         new_node = ListNode(new_data)
+#         new_node.next = self.head
+#         self.head = new_node
 
-    def __str__(self):
-        return str(self.value)
+#     def deleteNode(self, key):
+#         temp = self.head
+#         if (temp is not None):
+#             if (temp.value == key):
+#                 self.head = temp.next
+#                 temp = None
+#                 return
+#         while(temp is not None):
+#             if temp.value == key:
+#                 break
+#             prev = temp
+#             temp = temp.next
 
+#         # if key was not present in
+#         # linked list
+#         if(temp == None):
+#             return
 
-class LinkedList:
+#         # Unlink the node from linked list
+#         prev.next = temp.next
 
-    def __init__(self, values=None):
-        self.head = None
-        self.tail = None
-        if values is not None:
-            self.add_multiple(values)
+#         temp = None
 
-    def __iter__(self):
-        current = self.head
-        while current:
-            yield current
-            current = current.next
+#     # Utility function to print the
+#     # linked LinkedList
+#     def printList(self):
+#         temp = self.head
+#         while(temp):
+#             print(temp.value, end=' ')
+#             temp = temp.next
 
-    def __str__(self):
-        values = [str(x) for x in self]
-        return ' -> '.join(values)
+#     def remove_dups(node):
+#         current = node
+#         if current is None:
+#             return
+#         no_dupes = []
+#         while current is not None:
+#             if current.value not in no_dupes:
+#                 no_dupes.append(current.value)
+#             current = current.next
+#         return no_dupes
 
-    def __len__(self):
-        result = 0
-        node = self.head
-        while node:
-            result += 1
-            node = node.next
-        return result
-
-    def add(self, value):
-        if self.head is None:
-            self.tail = self.head = LinkedListNode(value)
-        else:
-            self.tail.next = LinkedListNode(value)
-            self.tail = self.tail.next
-        return self.tail
-
-    def add_to_beginning(self, value):
-        if self.head is None:
-            self.tail = self.head = LinkedListNode(value)
-        else:
-            self.head = LinkedListNode(value, self.head)
-        return self.head
-
-    def add_multiple(self, values):
-        for v in values:
-            self.add(v)
-
-    # def generate(self, n, min_value, max_value):
-    #     self.head = self.tail = None
-    #     for i in range(n):
-    #         self.add(randint(min_value, max_value))
-    #     return self
-
-
-def remove_dups(ll):
-    current = ll
-    if current is None:
-        return
-    no_dupes = []
-    while current is not None:
-        if current.value not in no_dupes:
-            no_dupes.append(current.value)
-        current = current.next
-    return no_dupes
-
-    # current = ll.head
-    # while current:
-    #     runner = current
-    #     while runner.next:
-    #         if runner.next.value == current.value:
-    #             runner.next = runner.next.next
-    #         else:
-    #             runner = runner.next
-    #     current = current.next
-    # return ll.head
+# current = ll.head
+# while current:
+#     runner = current
+#     while runner.next:
+#         if runner.next.value == current.value:
+#             runner.next = runner.next.next
+#         else:
+#             runner = runner.next
+#     current = current.next
+# return ll.head
 
 
-ll = LinkedList([1, 5, 4, 7, 7, 6, 5, 5, 5, 9, 10])
-# ll.generate(100, 0, 9)
-print("linked list", ll)
-remove_dups(ll)
-print("dupes removed", ll)
+llist = LinkedList()
+
+llist.push(20)
+llist.push(13)
+llist.push(13)
+llist.push(11)
+llist.push(11)
+llist.push(11)
+print("Created Linked List: ")
+llist.printList()
+print()
+print("Linked List after removing",
+      "duplicate elements:")
+llistt.remove_dups()
+llist.printList()
