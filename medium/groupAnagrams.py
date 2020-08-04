@@ -2,6 +2,7 @@
 
 
 # not efficient or easy solution: time 0(WN log(N) + NW log(W)) and Space = 0(WN)
+# W is number of words, N is length of longest word
 def groupAnagrams(words):
     pass
 

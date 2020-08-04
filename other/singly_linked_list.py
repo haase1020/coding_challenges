@@ -57,32 +57,38 @@ class LinkedList:
         for v in values:
             self.add(v)
 
-    def generate(self, n, min_value, max_value):
-        self.head = self.tail = None
-        for i in range(n):
-            self.add(randint(min_value, max_value))
-        return self
+    # def generate(self, n, min_value, max_value):
+    #     self.head = self.tail = None
+    #     for i in range(n):
+    #         self.add(randint(min_value, max_value))
+    #     return self
 
 
 def remove_dups(ll):
-    if ll.head is None:
+    current = ll
+    if current is None:
         return
-
-    current = ll.head
-    while current:
-        runner = current
-        while runner.next:
-            if runner.next.value == current.value:
-                runner.next = runner.next.next
-            else:
-                runner = runner.next
+    no_dupes = []
+    while current is not None:
+        if current.value not in no_dupes:
+            no_dupes.append(current.value)
         current = current.next
+    return no_dupes
 
-    return ll.head
+    # current = ll.head
+    # while current:
+    #     runner = current
+    #     while runner.next:
+    #         if runner.next.value == current.value:
+    #             runner.next = runner.next.next
+    #         else:
+    #             runner = runner.next
+    #     current = current.next
+    # return ll.head
 
 
-ll = LinkedList()
-ll.generate(100, 0, 9)
-print(ll)
+ll = LinkedList([1, 5, 4, 7, 7, 6, 5, 5, 5, 9, 10])
+# ll.generate(100, 0, 9)
+print("linked list", ll)
 remove_dups(ll)
-print(ll)
+print("dupes removed", ll)
