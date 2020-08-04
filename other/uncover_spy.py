@@ -22,11 +22,13 @@ def uncover_spy(n, trust):
     if len(trust) < n-1:
         return -1
     # initialize trust counts array with initial indices of count 0
+    # use n+1 to make it easy to map each person to proper index in the array
+    # for example, person 1 would map to index 1, person 2 to index 2, etc.
     indegree = [0] * (n + 1)
     outdegree = [0] * (n + 1)
 
     for x, y in trust:
-        outdegree[x] -= 1  # I had this wrong!! Should be '-='
+        outdegree[x] += 1  # could it also be "-="??? that works too....
         indegree[y] += 1
 
     # can start at 1 since first item in list doesn't mean anything (it's 0)
