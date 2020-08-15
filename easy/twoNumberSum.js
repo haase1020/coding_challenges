@@ -1,45 +1,21 @@
-// // double for loop option:  0(n^2) time | 0(1) space
-// function twoNumberSum(array, targetSum) {
-//     for (let i = 0; i < array.length - 1; i++) {
-//         const firstNum = array[i];
-//         for (let j = i + 1; j < array.length; j++) {
-//             const secondNum = array[j];
-//             if (firstNum + secondNum === targetSum) {
-//                 return [firstNum, secondNum];
-//             }
-//         }
-//     }
-//     return [];
-// }
-
-// // hashtable option 0(n) time | 0(n) space
-// function twoNumberSum(array, targetSum) {
-//   const nums = {};
-//   for (const num of array) {
-//     const potentialMatch = targetSum - num;
-//     if (potentialMatch in nums) {
-//       return [potentialMatch, num];
-//     } else {
-//       nums[num] = true;
-//     }
-//   }
-//   return [];
-// }
-
 // two pointer option: 0(nlog(n)) time | 0(1) space
-// function twoNumberSum(array, targetSum) {
-//   array.sort((a, b) => a - b);
-//   let left = 0;
-//   let right = array.length - 1;
-//   while (left < right) {
-//     const currentSum = array[left] + array[right];
-//     if (currentSum === targetSum) {
-//       return [array[left], array[right]];
-//     } else if (currentSum > targetSum) {
-//       right--;
-//     }
-//   }
-//   return [];
-// }
+function twoNumberSum(array, targetSum) {
+  array.sort((a, b) => a - b);
+  let newArray = [];
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    const currentSum = array[left] + array[right];
+    if (currentSum === targetSum) {
+      newArray.push([array[left], array[right]]);
+      right--;
+    } else if (currentSum < targetSum) {
+      left++;
+    } else if (currentSum > targetSum) {
+      right--;
+    }
+  }
+  return newArray;
+}
 
-console.log(twoNumberSum([1, 2, 3, 4, 5], 9));
+console.log(twoNumberSum([3, 5, 2, -4, 8, 11], 7));
