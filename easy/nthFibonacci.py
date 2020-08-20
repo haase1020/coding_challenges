@@ -7,7 +7,7 @@
 # recursive solution with memoizing is much better: 0(n) time and space
 # iterative solution is best: 0(n) time space 0(1)
 
-# #naive recursive
+# naive recursive
 # def getNthFib(n):
 #     if n == 2:
 #         return 1
@@ -16,15 +16,22 @@
 #     else:
 #         return getNthFib(n-1) + getNthFib(n-2)
 
+
 # # better recursive
-# def getNthFib(n, memoize={1: 0, 2: 1}):
+# This solution uses memoization, which basically creates a cache to store data
+# if n is in memoize, return memoize[n]
+# def getNthFib(n, memoize={1: 0, 2: 1}):  # holds the base cases
 #     if n in memoize:
 #         return memoize[n]
 #     else:
-#         memoize[n] = getNthFib(n - 1, memoize) + getNithFir(n - 2, memoize)
+#         memoize[n] = getNthFib(n - 1, memoize) + getNthFib(n - 2, memoize)
 #         return memoize[n]
 
-# iterative
+# iterative - really good solution
+# store last two fib numbers in a list
+# time complexity: 0(n)   space complexity: 0(1) -> just stores two numbers at a time
+
+
 def getNthFib(n):
     lastTwo = [0, 1]
     counter = 3
