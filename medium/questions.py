@@ -1,17 +1,11 @@
-def print_prime_factors(number):
-    # Start with two, which is the first prime
-    factor = 2
-    # Keep going until the factor is larger than the number
-    while factor <= number:
-        # Check if factor is a divisor of number
-        if number % factor == 0:
-            # If it is, print it and divide the original number
-            print(factor)
-            number = number / factor
-        else:
-            # If it's not, increment the factor by one
-            factor += 1
-    return "Done"
+# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+def gcd(x, y): return y and gcd(y, x % y) or x
+def lcm(x, y): return x * y / gcd(x, y)
 
 
-print(print_prime_factors(600851475143))
+n = 1
+for i in range(1, 31):
+    n = lcm(n, i)
+print(n)
