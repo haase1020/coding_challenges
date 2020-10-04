@@ -16,7 +16,7 @@
 //   return maxArea;
 // };
 
-//optimized solution
+//optimized solution | time complexity 0(n) | space complexity
 const getMaxWaterContainer = function (heights) {
   let a = 0;
   let b = heights.length - 1;
