@@ -1,9 +1,9 @@
 // leetcode #844 Backspace String Compare
 // case sensitive
-// given two strings s and t, return if they are equal when both are
-// typed into empty text editors. # means a backspace
+// 🔎 given two strings s and t, return if they are equal when both are
+// typed into empty text editors. # means a backspace 🔎
 
-//optimized solution | time complexity 0(a+b) | space complexity 0(1)
+//💯 optimized solution | time complexity 0(a+b) | space complexity 0(1)
 const string1 = 'ab###z';
 const string2 = 'az##z';
 

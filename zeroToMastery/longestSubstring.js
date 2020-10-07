@@ -1,7 +1,7 @@
-// given a string s, find the length of the longest substring without repeating characters.
+// 🔎 given a string s, find the length of the longest substring without repeating characters.🔎
 // leetcode #3 Longest Substring Without Repeating Characters
 
-//brute force | time complexity 0(n2) | Space 0(n)
+//  💪 brute force | time complexity 0(n2) | Space 0(n)
 // var lengthOfLongestSubstring = function (s) {
 //   if (s.length <= 1) return s.length;
 
@@ -27,6 +27,7 @@
 // console.log(lengthOfLongestSubstring('abcbdca'));
 
 /*
+💯 optimized solution:
 sliding window technique (similar to 2 pointers technique)
 1. use a sliding window to represent the current substring
 2. the size of the window will change based on new characters, and characters we've already seen before

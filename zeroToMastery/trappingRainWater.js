@@ -1,8 +1,8 @@
-// Given n non-negative integers representing an elevation map where the width of each bar is 1,
+// 🔎 Given n non-negative integers representing an elevation map where the width of each bar is 1,
 // compute how much water it is able to trap after raining.
-// assume all integers are positive
+// assume all integers are positive 🔎
 
-//brute force solution | time complexity 0(n^2) | space complexity 0(1)
+//💪 brute force solution | time complexity 0(n^2) | space complexity 0(1)
 
 // const elevationArray = [0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2];
 
@@ -32,7 +32,7 @@
 
 // console.log(getTrappedRainwater(elevationArray)); //8
 
-//opitimzed solution | time complexity 0(n) | space complexity 0(1)
+//💯 optimzed solution | time complexity 0(n) | space complexity 0(1)
 // 1. identify pointer with lesser value
 // 2. is this pointer value lesser than or equal to max on that side
 //  yes --> update max on that side   no --> get water for pointer value, add to total
