@@ -12,22 +12,42 @@
     💯💪
 */
 
-// 🙋 solution 1: 2 pointers from center
+// // 🙋 solution 1: 2 pointers from center
+// const string = 'A man, a plan, a canal: Panama';
+// const isValidPalindrome = function (s) {
+//   s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+//   let left = Math.floor(s.length / 2),
+//     right = left;
+//   if (s.length % 2 === 0) {
+//     left--;
+//   }
+//   while (left >= 0 && right < s.length) {
+//     if (s[left] !== s[right]) {
+//       return false;
+//     }
+//     left--;
+//     right++;
+//   }
+//   return true;
+// };
+// console.log(isValidPalindrome(string));
+
+// 🙋 solution 2: 2 pointers from outside
 const string = 'A man, a plan, a canal: Panama';
 const isValidPalindrome = function (s) {
   s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-  let left = Math.floor(s.length / 2),
-    right = left;
-  if (s.length % 2 === 0) {
-    left--;
-  }
-  while (left >= 0 && right < s.length) {
+
+  let left = 0;
+  right = s.length - 1;
+
+  while (left < right) {
     if (s[left] !== s[right]) {
       return false;
     }
-    left--;
-    right++;
+    left++;
+    right--;
   }
   return true;
 };
+
 console.log(isValidPalindrome(string));
