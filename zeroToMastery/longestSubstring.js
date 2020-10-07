@@ -46,7 +46,8 @@ var lengthOfLongestSubstring = function (s) {
       left = prevSeenChar + 1;
     }
     seen[currentChar] = right;
-    longest = Math.max(longest, right - left + 1);
+
+    longest = Math.max(longest, seen[currentChar] - left + 1);
   }
   return longest;
 };
