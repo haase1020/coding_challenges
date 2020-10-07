@@ -32,22 +32,36 @@
 // };
 // console.log(isValidPalindrome(string));
 
-// 🙋 solution 2: 2 pointers from outside
+// // 🙋 solution 2: 2 pointers from outside
+// const string = 'A man, a plan, a canal: Panama';
+// const isValidPalindrome = function (s) {
+//   s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+//   let left = 0;
+//   right = s.length - 1;
+
+//   while (left < right) {
+//     if (s[left] !== s[right]) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   return true;
+// };
+
+// console.log(isValidPalindrome(string));
+
+// 🙋 solution 3: compare against reverse solution
 const string = 'A man, a plan, a canal: Panama';
+
 const isValidPalindrome = function (s) {
   s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+  let rev = '';
 
-  let left = 0;
-  right = s.length - 1;
-
-  while (left < right) {
-    if (s[left] !== s[right]) {
-      return false;
-    }
-    left++;
-    right--;
+  for (let i = s.length - 1; i >= 0; i--) {
+    rev += s[i];
   }
-  return true;
+  return rev === s;
 };
-
 console.log(isValidPalindrome(string));
